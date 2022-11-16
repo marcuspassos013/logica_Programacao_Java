@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.io.*;
 
 public class vetorMediaFinal {
     public static void main(String[] args) {
@@ -7,17 +7,17 @@ public class vetorMediaFinal {
         int ContadorAlunos;
         float AcumMedia = 0, MediaTurma;
 
-        Scanner dado = new Scanner(System.in);
+        Console dado = System.console();
         VetNomeAluno = new String[5];
         VetMediaFinal = new float[5];
         System.out.println("*************** Sistema de Gestão Escolar ***********************");
         for (ContadorAlunos = 0; ContadorAlunos < 5; ContadorAlunos++)
         {
             System.out.println("Informe Nome do  " +(ContadorAlunos + 1) + "º aluno(a): ");
-            VetNomeAluno[ContadorAlunos] = dado.next();
+            VetNomeAluno[ContadorAlunos] = dado.readLine();
 
             System.out.println( "Informe sua Media Final:");
-            VetMediaFinal[ContadorAlunos] = dado.nextFloat();
+            VetMediaFinal[ContadorAlunos] = Float.parseFloat(dado.readLine());
             if (VetMediaFinal[ContadorAlunos] >= 7.0)
                 System.out.println("Voce está APROVADO(A)." + VetNomeAluno[ContadorAlunos]);
             else
